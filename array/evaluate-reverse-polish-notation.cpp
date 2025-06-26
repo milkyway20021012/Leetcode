@@ -9,8 +9,9 @@ public:
 
     int evalRPN(vector<string>& tokens) { 
         stack<int> st; 
+        int ret = 0;
         for(size_t i = 0 ;i<tokens.size();++i){
-            int ret = 0;
+            
             if(!pd(tokens[i])){
                 st.push(stoi(tokens[i]));
             }
