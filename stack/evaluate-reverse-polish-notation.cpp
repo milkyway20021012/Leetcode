@@ -1,6 +1,6 @@
 class Solution {
 public:
-    bool pd(char& ch) {
+    bool pd(char ch) {
         if (ch == '+' || ch == '-' || ch == '*' || ch == '/') {
             return true;
         }
