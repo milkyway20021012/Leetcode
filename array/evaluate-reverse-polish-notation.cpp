@@ -12,7 +12,7 @@ public:
         for(size_t i = 0 ;i<tokens.size();++i){
             int ret = 0;
             if(!pd(tokens[i])){
-                st.push( ((char)tokens[i]) - '0');
+                st.push(stoi(tokens[i]));
             }
             else{
                 ret = st.top();
