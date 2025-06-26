@@ -12,22 +12,22 @@ public:
         for(size_t i = 0 ;i<tokens.size();++i){
             int ret = 0;
             if(!pd(tokens[i])){
-                st.push(tokens[i] - '0');
+                st.push( ((char)tokens[i]) - '0');
             }
             else{
                 ret = st.top();
                 st.pop();
-                if(tokens[i] == '+'){
+                if(tokens[i] == "+"){
                     ret = st.top() + ret;
                     st.pop();
                     st.push(ret);
                 }
-                else if(tokens[i] == '-'){
+                else if(tokens[i] == "-"){
                     ret = st.top() - ret;
                     st.pop();
                     st.push(ret);
                 }
-                else if(tokens[i] == '*'){
+                else if(tokens[i] == "*"){
                     ret = st.top() * ret;
                     st.pop();
                     st.push(ret);
