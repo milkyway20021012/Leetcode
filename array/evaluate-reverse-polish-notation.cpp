@@ -11,7 +11,7 @@ public:
         stack<int> st; 
         for(size_t i = 0 ;i<tokens.size();++i){
             int ret = 0;
-            if(!pd){
+            if(!pd(tokens[i])){
                 st.push(tokens[i] - '0');
             }
             else{
