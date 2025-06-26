@@ -1,7 +1,7 @@
 class Solution {
 public:
-    bool pd(char ch) {
-        if (ch == '+' || ch == '-' || ch == '*' || ch == '/') {
+    bool pd(string ch) {
+        if (ch == "+" || ch == "-" || ch == "*" || ch == "/") {
             return true;
         }
         return false;
