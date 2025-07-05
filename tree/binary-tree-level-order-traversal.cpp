@@ -31,7 +31,7 @@ public:
                     q.push(front->left);
 
                 if(front->right)
-                    q.push(front->right)
+                    q.push(front->right);
             }
             levelSize = q.size();
             vv.push_back(v);
