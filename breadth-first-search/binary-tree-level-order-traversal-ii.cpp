@@ -2,7 +2,7 @@
 class Solution {
 public:
     vector<vector<int>> levelOrderBottom(TreeNode* root) {
-        queue<TreeeNode*> q;
+        queue<TreeNode*> q;
         int levelSize = 0;
         vector<vector<int>> vv;
         if (root) {
