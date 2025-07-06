@@ -6,7 +6,7 @@ public:
         for(auto& e: nums){
             pq.push(e);
         }
-        int i = 0;
+        int i = 1;
         while(i < k){
             pq.pop();
             ++i;
