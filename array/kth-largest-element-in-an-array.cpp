@@ -6,10 +6,8 @@ public:
         for(auto& e: nums){
             pq.push(e);
         }
-        int i = 1;
-        while(i < k){
+        while(--k){
             pq.pop();
-            ++i;
         }
         val = pq.top();
         return val;
