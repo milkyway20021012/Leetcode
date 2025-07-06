@@ -4,13 +4,13 @@ public:
         int val = 0;
         priority_queue<int> pq;
         for(auto& e: nums){
-            dq.push(e);
+            pq.push(e);
         }
         int i = 0;
         while(i < k){
-            dq.pop();
+            pq.pop();
         }
-        val = dq.top();
+        val = pq.top();
         return val;
     }
 };
