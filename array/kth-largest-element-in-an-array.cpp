@@ -9,6 +9,7 @@ public:
         int i = 0;
         while(i < k){
             pq.pop();
+            ++i;
         }
         val = pq.top();
         return val;
