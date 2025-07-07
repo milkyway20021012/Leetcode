@@ -22,7 +22,7 @@ public:
                     ret = b- a;
                 }
                 else if(token == "*"){
-                    ret b * a;
+                    ret =  b * a;
                 }
                 else{
                     ret = b / a;
