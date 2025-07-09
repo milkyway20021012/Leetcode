@@ -6,7 +6,7 @@ public:
         int dest = 0;
 
         // 先找到最後一個複寫的數
-        while (cur < arr.size())
+        while (cur < arr.size()){
             if (arr[cur]) {
                 ++cur;
                 ++dest;
@@ -41,4 +41,4 @@ public:
     }
 }
 }
-};
+;
