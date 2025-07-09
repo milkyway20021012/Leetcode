@@ -1,23 +1,20 @@
 class Solution {
 public:
     bool isHappy(int n) {
-        int cnt = 5;
+        int cnt = 10;
         int val = 0;
         string str = to_string(n);
-        while (val != 1) {
+        while (cnt) {
             val = 0;
             for (auto e : str) {
                 int num = e - '0';
                 val += pow(num, 2);
             }
             str = to_string(val);
-            ++cnt;
-            if (cnt >= 10) {
-                break;
+            if(val == 1){
+                return true;
             }
-        }
-        if (val == 1) {
-            return true;
+            --cnt;
         }
         return false;
     }
