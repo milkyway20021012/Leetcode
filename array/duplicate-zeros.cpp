@@ -11,9 +11,9 @@ public:
                 ++dest;
             } else {
                 dest += 2;
-                if (dest >= n - 1) {
-                    break;
-                }
+            }
+            if (dest >= n - 1) {
+                break;
             }
             ++cur;
         }
