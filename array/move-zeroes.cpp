@@ -7,6 +7,9 @@ public:
             return;
         } else {
             while (left < right) {
+                if(nums[right] == 0 && nums[left] == 0){
+                    --right;
+                }
                 if (nums[left] == 0 && nums[right] != 0) {
                     swap(nums[left], nums[right]);
                     ++left;
