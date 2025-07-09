@@ -21,7 +21,7 @@ public:
         }
         // 判斷dest的情況 如果dest == arr.size() 那麼就代表說最後要覆寫的值是0
         if (dest == n) {
-            arr[dest - 1] = 0;
+            arr[n - 1] = 0;
             dest -= 2;
             --cur;
         }
