@@ -3,7 +3,7 @@ public:
     void moveZeroes(vector<int>& nums) {
         int left = 0;
         int right = nums.size() - 1;
-        if (left == right && nums[0] == 0) {
+        if (left == right) {
             return;
         } else {
             while (left < right) {
