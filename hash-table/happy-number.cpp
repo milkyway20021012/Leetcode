@@ -12,7 +12,7 @@ public:
             }
             str = to_string(val);
             ++cnt;
-            if (cnt >= 100) {
+            if (cnt >= 10) {
                 break;
             }
         }
