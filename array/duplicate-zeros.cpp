@@ -5,14 +5,15 @@ public:
         int cur = 0;
         int dest = 0;
         int n = arr.size();
+        // 1 2 3
         while (cur < n) {
             if (cur) {
                 ++dest;
             } else {
                 dest += 2;
-            }
-            if (dest >= n - 1) {
-                break;
+                if (dest >= n - 1) {
+                    break;
+                }
             }
             ++cur;
         }
@@ -23,12 +24,13 @@ public:
             --cur;
         }
 
-        while(cur >= 0){
-            if(arr[cur]){ arr[dest--] = arr[cur--];}
-            else{
-                arr[dest -1 ] = arr[dest] = 0;
+        while (cur >= 0) {
+            if (arr[cur]) {
+                arr[dest--] = arr[cur--];
+            } else {
+                arr[dest - 1] = arr[dest] = 0;
                 --cur;
-                dest-=2;
+                dest -= 2;
             }
         }
     }
