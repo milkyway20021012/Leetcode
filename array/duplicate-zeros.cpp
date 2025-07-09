@@ -29,9 +29,9 @@ public:
             if (arr[cur]) {
                 arr[dest--] = arr[cur--];
             } else {
-                arr[dest - 1] = arr[dest] = 0;
+                arr[dest--] = 0;
+                arr[dest--] = 0;
                 --cur;
-                dest -= 2;
             }
         }
     }
