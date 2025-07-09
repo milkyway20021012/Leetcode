@@ -5,15 +5,12 @@ public:
         int cur = 0;
         int dest = -1;
         int n = arr.size();
-        // [1,0,2,3,0,4,5,0]
-        // [1,0,2,3,0,4]
         while (cur < n) {
             if (cur) {
                 ++dest;
             } else {
                 dest += 2;
             }
-
             if (dest >= n - 1) {
                 break;
             }
@@ -22,8 +19,9 @@ public:
         // 判斷dest的情況 如果dest == arr.size() 那麼就代表說最後要覆寫的值是0
         if (dest == n) {
             arr[n - 1] = 0;
-            dest -= 2;
             --cur;
+            dest -= 2;
+            
         }
 
         while (cur >= 0) {
