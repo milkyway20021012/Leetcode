@@ -4,7 +4,7 @@ public:
         // 先找到最後一個要覆寫的數
         int cur = 0;
         int dest = 0;
-        n = arr.size();
+        int n = arr.size();
         while (cur < n) {
             if (cur) {
                 ++dest;
