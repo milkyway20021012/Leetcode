@@ -2,11 +2,9 @@ class Solution {
 public:
     void duplicateZeros(vector<int>& arr) {
         // 先找到最後一個要覆寫的數
-        int cur = 0;
-        int dest = -1;
-        int n = arr.size();
+        int cur = 0,dest = -1, n = arr.size();
         while (cur < n) {
-            if (cur) {
+            if (arr[cur]) {
                 ++dest;
             } else {
                 dest += 2;
