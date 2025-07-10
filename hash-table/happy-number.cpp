@@ -16,7 +16,7 @@ public:
             slow = bitsum(n);
             fast = bitsum(bitsum(n));
         }
-        return fast == 1;
+        return slow == 1;
 
     }
 };
