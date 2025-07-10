@@ -13,8 +13,8 @@ public:
         // Two pointers
         int slow = n, fast = bitsum(n);
         while(slow != fast){
-            slow = bitsum(n);
-            fast = bitsum(bitsum(n));
+            slow = bitsum(slow);
+            fast = bitsum(bitsum(fast));
         }
         return slow == 1;
 
