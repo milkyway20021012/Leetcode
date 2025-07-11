@@ -16,9 +16,7 @@ public:
                     ret += (right - left);
                     --right;
                 } else {
-                    if (nums[left] + nums[right] == max) {
-                        ++left;
-                    }
+                    ++left;
                 }
             }
             left = 0;
