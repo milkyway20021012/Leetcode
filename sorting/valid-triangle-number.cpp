@@ -17,9 +17,6 @@ public:
                     --right;
                 } else {
                     if (nums[left] + nums[right] == max) {
-                        ret += (right - left - 1); // -1 是扣掉left 自己 因爲不能等於
-                        --right;
-                    } else {
                         ++left;
                     }
                 }
