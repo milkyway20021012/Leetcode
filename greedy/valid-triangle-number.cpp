@@ -8,7 +8,7 @@ public:
         for(int i = n - 1;i>=2;--i){
             int left = 0, right = i-1;
             while(left != right){
-                if(nums[left] + nums[right] > max){
+                if(nums[left] + nums[right] > nums[i]){
                     ret += right - left;
                     --right;
                 }
