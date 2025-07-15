@@ -3,8 +3,6 @@ public:
     vector<vector<int>> fourSum(vector<int>& nums, int target) {
         sort(nums.begin(), nums.end());
         // 有序 => 雙指針、二分
-        // 1,0,-1,0,-2,2
-        // -2 -1 0 0 1 2
         int n = nums.size();
         vector<vector<int>> vv;
         for(int i =  0 ;i <n;){ // 固定數字a (變成找三數和)
@@ -21,7 +19,7 @@ public:
                         while (left < right && nums[left] == nums[left - 1]) {
                             ++left;
                         }
-                        while (left < right && nums[right] == nums[right]) {
+                        while (left < right && nums[right] == nums[right+1]) {
                             --right;
                         }
                     }
