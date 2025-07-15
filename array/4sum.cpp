@@ -5,13 +5,13 @@ public:
         // 有序 => 雙指針、二分
         int n = nums.size();
         vector<vector<int>> vv;
-        for(int i =  0 ;i <n;){ // 固定數字a (變成找三數和)
-            for (int j = i + 1;j<n;) { // 固定數字b (找雙數和)
+        for (int i = 0; i < n;) {         // 固定數字a (變成找三數和)
+            for (int j = i + 1; j < n;) { // 固定數字b (找雙數和)
                 int left = j + 1;
                 int right = n - 1;
+                long long sum = nums[i] + nums[j] + nums[left] + nums[right];
                 while (left < right) {
-                    if (nums[i] + nums[j] + nums[left] + nums[right] ==
-                        target) {
+                    if (sum == target) {
                         vv.push_back(
                             {nums[i], nums[j], nums[left], nums[right]});
                         ++left;
@@ -19,26 +19,25 @@ public:
                         while (left < right && nums[left] == nums[left - 1]) {
                             ++left;
                         }
-                        while (left < right && nums[right] == nums[right+1]) {
+                        while (left < right && nums[right] == nums[right + 1]) {
                             --right;
                         }
-                    }
-                    else{
-                        if(nums[i] + nums[j] + nums[left] + nums[right] > target){
+                    } else {
+                        if (nums[i] + nums[j] + nums[left] + nums[right] >
+                            target) {
                             --right;
-                        }
-                        else{
+                        } else {
                             ++left;
                         }
                     }
                 }
                 ++j;
-                while(j<n && nums[j] == nums[j-1]){
+                while (j < n && nums[j] == nums[j - 1]) {
                     ++j;
                 }
             }
             ++i;
-            while(i < n && nums[i] == nums[i-1]){
+            while (i < n && nums[i] == nums[i - 1]) {
                 ++i;
             }
         }
