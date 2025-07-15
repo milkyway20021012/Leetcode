@@ -9,8 +9,10 @@ public:
             for (int j = i + 1; j < n;) { // 固定數字b (找雙數和)
                 int left = j + 1;
                 int right = n - 1;
-                long long sum = nums[i] + nums[j] + nums[left] + nums[right];
+
                 while (left < right) {
+                    long long sum =
+                        nums[i] + nums[j] + nums[left] + nums[right];
                     if (sum == target) {
                         vv.push_back(
                             {nums[i], nums[j], nums[left], nums[right]});
