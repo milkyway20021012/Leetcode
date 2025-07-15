@@ -10,7 +10,7 @@ public:
                 int left = j + 1;
                 int right = n - 1;
                 while (left < right) {
-                    if ((long long) nums[i] + nums[j] + nums[left] + nums[right] ==
+                    if (((long long)nums[i]) + nums[j] + nums[left] + nums[right] ==
                         target) {
                         vv.push_back(
                             {nums[i], nums[j], nums[left], nums[right]});
