@@ -23,7 +23,7 @@ public:
                             --right;
                         }
                     } else {
-                        if (nums[i] + nums[j] + nums[left] + nums[right] >
+                        if (sum + nums[left] + nums[right] >
                             target) {
                             --right;
                         } else {
