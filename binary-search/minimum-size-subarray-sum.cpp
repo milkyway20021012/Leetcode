@@ -4,8 +4,7 @@ public:
         // Sliding Window
         int sum = 0, len = INT_MAX;
         int n = nums.size();
-        int left,right;
-        for(left = 0, right = 0; right < n; right++){
+        for(int left = 0, right = 0; right < n; right++){
             sum += nums[right];
             while(sum >=target){ // Update Window
                 len= min(len,right - left + 1);
