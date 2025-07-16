@@ -14,6 +14,6 @@ public:
             }
             right++;
         }   
-        return ret;
+        return s == " " ? 1 : ret;
     }
 };
