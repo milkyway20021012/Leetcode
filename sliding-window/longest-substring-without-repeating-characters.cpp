@@ -9,11 +9,11 @@ public:
         while(right < n){
             hash[s[right]]++; // Entering Window
             while(hash[s[right]] > 1){
-                ret = max(ret,right-left);
                 hash[s[left++]]--; // Leaving Window
             }
+            ret = max(ret,right-left+1);
             right++;
         }   
-        return (n == 0 || n == 1) ? 1 : ret;
+        return ret;
     }
 };
