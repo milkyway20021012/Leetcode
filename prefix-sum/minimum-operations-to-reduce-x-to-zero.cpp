@@ -1,35 +1,26 @@
 class Solution {
 public:
     int minOperations(vector<int>& nums, int x) {
-        sort(nums.begin(),nums.end());
-        int i, j;
+        int sum = 0;
+        for (auto& e :nums) {
+            sum += e;
+        }
+        // 思路：從一段連續的區間找到最長的連續區間使得 len(這段區間的長度) -
+        // nums.size() 最小
+        int target = sum - x;
         int n = nums.size();
-        int ret = INT_MAX;
-        for (i = 0; i < n; ++i) {
-            int sum = nums[i];
-            int count = 1;
-            if (sum == x) {
-                ret = min(count,ret);
-                continue;
+        int len = -1;
+        for (int left = 0, right = 0, tmp = 0; right < n; ++right) {
+            // 進窗口
+            tmp += nums[right];
+            while(tmp > target){
+                // 出窗口
+                tmp -= nums[left++];
             }
-            for (j = i + 1; j < n; ++j) {
-                sum += nums[j];
-                ++count;
-                // sum > x
-                if (sum > x) {
-                    sum -= nums[j];
-                    --count;
-                }
-                // sum = x
-                else if (sum == x) {
-                    ret = min(count, ret);
-                }
-                // sum < x
-                else {
-                    continue;
-                }
+            if(tmp == target){
+                len = max(len,right-left+1);
             }
         }
-        return ret == INT_MAX ? -1 : ret;
+        return len == -1 ? -1 : n - len;
     }
 };
