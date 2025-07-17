@@ -1,9 +1,9 @@
 class Solution {
 public:
     int minOperations(vector<int>& nums, int x) {
+        sort(nums.begin(),nums.end());
         int i, j;
         int n = nums.size();
-
         int ret = INT_MAX;
         for (i = 0; i < n; ++i) {
             int sum = nums[i];
@@ -13,7 +13,6 @@ public:
                 continue;
             }
             for (j = i + 1; j < n; ++j) {
-
                 sum += nums[j];
                 ++count;
                 // sum > x
