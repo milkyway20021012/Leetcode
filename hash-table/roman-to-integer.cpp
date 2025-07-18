@@ -30,7 +30,7 @@ public:
                     sum +=m[s[i]];
                 }
             }
-            else if(s[i == 'C']){
+            else if(s[i]== 'C']){
                 if(s[i+1] == 'D'){
                     sum +=400;
                     ++i;
