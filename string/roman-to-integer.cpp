@@ -6,7 +6,7 @@ public:
                           {'C', 100}, {'D', 500}, {'M', 1000}};
 
         for(int i = 0;i<s.size();++i){
-            if(s[i+1] > s[i]){
+            if(mp[s[i+1]] > mp[s[i]]){
                 sum -= mp[s[i]];
             }
             else{
