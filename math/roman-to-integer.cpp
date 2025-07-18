@@ -1,3 +1,4 @@
+class Solution {
 public:
     int char2num(char a) {
         switch (a) {
