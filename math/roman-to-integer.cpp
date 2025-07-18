@@ -12,6 +12,7 @@ public:
             else{
                 sum +=mp[s[i]];
             }
+            cout << sum << endl;
         }
         return sum;
     }
