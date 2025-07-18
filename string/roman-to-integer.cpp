@@ -2,51 +2,32 @@ class Solution {
 public:
     int romanToInt(string s) {
         int sum = 0;
-        map<char,int> m = {{'I',1},{'V',5},{'X',10},{'L',50},{'C',100},{'D',500},{'M',1000}};
+        map<string, int> m = {{"I", 1},   {"IV", 4},   {"V", 5},   {"IX", 10},
+                              {"X", 10},  {"XL", 40},  {"L", 50},  {"XC", 90},
+                              {"C", 100}, {"CD", 400}, {"D", 500}, {"CM", 900},
+                              {"M", 1000}};
+        string tmp = "";
         for(int i = 0;i<s.size();++i){
-            if(s[i] == 'I'){
-                if(s[i+1] == 'V'){
-                    sum +=4;
-                    ++i;
-                }
-                else if(s[i+1] == 'X'){
-                    sum+=9;
-                    ++i;
-                }
-                else{
-                    sum += m[s[i]];
-                }
+            tmp += s[i];
+            if(tmp == "I" && s[i+1] == 'V' || tmp == "I" && s[i+1] == 'X'){
+                tmp += s[i+1];
+                ++i;
+                sum += m[tmp];
             }
-            else if(s[i] == 'X'){
-                if(s[i+1] == 'L'){
-                    sum+=40;
-                    ++i;
-                }
-                else if(s[i+1] == 'C'){
-                    sum+=90;
-                    ++i;
-                }
-                else{
-                    sum +=m[s[i]];
-                }
+            else if(tmp == "X" && s[i+1] == 'L' || tmp == "X" && s[i+1] == 'C'){
+                tmp +=s[i+1];
+                ++i;
+                sum +=m[tmp];
             }
-            else if(s[i]== 'C'){
-                if(s[i+1] == 'D'){
-                    sum +=400;
-                    ++i;
-                }
-                else if(s[i+1] == 'M'){
-                    sum +=900;
-                    ++i;
-                }
-                else{
-                    sum +=m[s[i]];
-                }
+            else if(tmp == "C" && s[i+1] == 'D' || tmp == "C" && s[i+1] == 'M'){
+                tmp +=s[i+1];
+                ++i;
+                sum +=m[tmp];
             }
             else{
-                sum +=m[s[i]];
+                sum +=m[tmp];
             }
-            cout << sum << endl;
+            tmp = "";
         }
         return sum;
     }
