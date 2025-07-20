@@ -2,32 +2,24 @@ class Solution {
 public:
     vector<int> findAnagrams(string s, string p) {
         vector<int> v;
-        int hash1[128] = {0};
-        int hash2[128] = {0};
-        for (int i = 0; i < p.size(); ++i) {
-            hash2[p[i]]++;
+        int hash_s[26] = {0};
+        int hash_p[26] = {0};
+        for (auto& e : p) {
+            hash_p[e - 'a']++;
         }
-        int len = 0;
-        for (int _left = 0, _right = 0; _right < s.size();) {
+        int n = s.size();
+        for (int _left = 0, _right = 0, count = 0; _right < n; ++_right) {
             // 进窗口
-            while (len < p.size()) {
-                hash1[s[_right]]++;
-                ++len;
-                ++_right;
+            char in = s[_right];
+            if(++hash_s[in - 'a'] <= hash_p[in - 'a']) ++count; // 判断
+            if(_right - _left + 1 > p.size()){ // s 读取的长度已经超过 p
+                // 出窗口
+                char out = s[_left++];
+                if(hash_s[out - 'a']-- <= hash_p[out - 'a']) --count;
             }
-            // 判断 hash2 中的字母对应个数和 hash1 是否一样
-            for (int i = 0; i < p.size(); ++i) {
-                if (i == p.size() - 1 && hash1[p[i]] == hash2[p[i]]) {
-                    v.push_back(_left);
-                }
-                if (hash1[p[i]] != hash2[p[i]]) {
-                    break;
-                }
+            if(count == p.size()){
+                v.push_back(_left);
             }
-            // 出窗口
-            hash1[s[_left]]--;
-            ++_left;
-            --len;
         }
         return v;
     }
