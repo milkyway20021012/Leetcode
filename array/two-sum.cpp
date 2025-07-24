@@ -1,17 +1,16 @@
 class Solution {
 public:
     vector<int> twoSum(vector<int>& numbers, int target) {
-        // 暴力美學
-        vector<pair<int,int>> v;
-        int i,j;
-        for(i = 0,j=0;i<numbers.size();){
-            if(numbers[i] + numbers[j] == target){
-                break;
+        int n = numbers.size();
+        for (int k = 0; k < n * n; ++k) {
+            int i = k / n;
+            int j = k % n;
+            if (i >= j)
+                continue; // 確保每對只檢查一次，且不重複
+            if (numbers[i] + numbers[j] == target) {
+                return {i, j};
             }
-            j = (j == numbers.size()-1) ? 0 : j+1;
-            cout << j << endl;
-            
         }
-        return {i,j};
+        return {};
     }
 };
