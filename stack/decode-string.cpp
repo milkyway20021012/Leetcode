@@ -21,7 +21,7 @@ public:
                 string tmp = result.top();
                 result.pop();
                 while(repeat--){
-                    tmp +=cureent;
+                    tmp +=current;
                 }
                 current = tmp;
             }
