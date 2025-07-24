@@ -1,42 +1,34 @@
 class Solution {
 public:
     string decodeString(string s) {
-        stack<string> st;
-        string ret;
-        for (int i = 0; i < s.size(); ++i) {
-            // Not ']' => push elements to stack.
-            if (s[i] != ']') {
-                st.push(string(1, s[i]));
+        stack<int> count; // 统计次数
+        stack<string> result; 
+        string current;
+        int k = 0;
+        for(auto& c : s){
+            if(isdigit(c)){
+                k = k*10 + (c - '0');
             }
-            // ']' => append n times element which is in [];
-            else {
-                int num = 0;
-                string tmp = "";
-                while (st.top() != "[") {
-                    tmp = st.top() + tmp;
-                    st.pop();
+            else if(c == '['){
+                count.push(k);
+                result.push(current);
+                current = "";
+                k = 0;
+            }
+            else if(c == ']'){
+                int repeat = count.top();
+                count.pop();
+                string tmp = result.top();
+                result.pop();
+                while(repeat--){
+                    tmp +=cureent;
                 }
-                string apend = tmp;
-                string dig = "";
-                st.pop();
-                while (!st.empty() && isdigit(st.top()[0])) {
-                    dig = st.top() + dig;
-                    st.pop();
-                }
-                num = stoi(dig);
-                while (num > 1) {
-                    tmp += apend;
-                    --num;
-                }
-                st.push(tmp);
+                current = tmp;
+            }
+            else{
+                current += c;
             }
         }
-        // append all string.
-        while (!st.empty()) {
-            ret = st.top() + ret;
-            st.pop();
-        }
-
-        return ret;
+        return current;
     }
 };
