@@ -10,15 +10,20 @@ public:
             }
             // ']' => append n times element which is in [];
             else {
+                int num = 0;
                 string tmp = "";
                 while (st.top() != "[") {
                     tmp = st.top() + tmp;
                     st.pop();
                 }
                 string apend = tmp;
+                string dig = "";
                 st.pop();
-                int num = st.top()[0] - '0';
-                st.pop();
+                while (!st.empty() && isdigit(st.top()[0])) {
+                    dig = st.top() + dig;
+                    st.pop();
+                }
+                num = stoi(dig);
                 while (num > 1) {
                     tmp += apend;
                     --num;
@@ -27,8 +32,7 @@ public:
             }
         }
         // append all string.
-        while(!st.empty()){
-            cout << st.top();
+        while (!st.empty()) {
             ret = st.top() + ret;
             st.pop();
         }
