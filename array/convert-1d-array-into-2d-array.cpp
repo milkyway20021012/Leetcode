@@ -3,7 +3,7 @@ public:
     vector<vector<int>> construct2DArray(vector<int>& original, int m, int n) {
         vector<vector<int>> v;
         int sz = original.size();
-        if (n != (sz / m)) {
+        if (n != (sz / m) || (m*n) < sz) {
             return v;
         }
         v.resize(m);  // 開 m 個空間 => row
