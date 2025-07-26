@@ -3,22 +3,20 @@ public:
     vector<vector<int>> construct2DArray(vector<int>& original, int m, int n) {
         vector<vector<int>> v;
         int sz = original.size();
-        if( n < (sz / m) ){
+        if (n != (sz / m)) {
             return v;
         }
-        v.resize(m); // 開 m 個空間 => row
+        v.resize(m);  // 開 m 個空間 => row
         int _row = 0; // 取第row個space
-        int i = 0; // idx
-        while(i < original.size()){
-            if(i < n){
-                if(i == n-1){
+        int i = 0;    // idx
+        while (i < original.size()) {
+            if (i < n) {
+                if (i == n - 1) {
                     v[_row++].push_back(original[i]);
-                }
-                else{
+                } else {
                     v[_row].push_back(original[i]);
                 }
-            }
-            else{
+            } else {
                 v[_row].push_back(original[i]);
             }
             ++i;
