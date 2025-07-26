@@ -11,8 +11,8 @@ public:
         int i = 0;    // idx
         int k = 0;
         while(k < sz){
-            if(k == n - 1 ){
-                v[_row++].push_back(original[k++]);
+            if(v[_row].size() == n){
+                v[++_row].push_back(original[k++]);
             }
             else{
                 v[_row].push_back(original[k++]);
