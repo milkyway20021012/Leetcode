@@ -9,17 +9,14 @@ public:
         v.resize(m);  // 開 m 個空間 => row
         int _row = 0; // 取第row個space
         int i = 0;    // idx
-        while (i < original.size()) {
-            if (i < n) {
-                if (i == n - 1) {
-                    v[_row++].push_back(original[i]);
-                } else {
-                    v[_row].push_back(original[i]);
-                }
-            } else {
-                v[_row].push_back(original[i]);
+        int k = 0;
+        while(k < sz){
+            if(k == n - 1 ){
+                v[_row++].push_back(original[k++]);
             }
-            ++i;
+            else{
+                v[_row].push_back(original[k++]);
+            }
         }
         return v;
     }
