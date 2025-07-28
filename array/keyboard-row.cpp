@@ -11,6 +11,10 @@ public:
                 if(row1.count(words[i][j])) a = 1;
                 if(row2.count(words[i][j])) b = 1;
                 if(row3.count(words[i][j])) c = 1;
+
+                if(a + b + c > 1){
+                    break;
+                }
             }
             // asadfaedfghjkala
             if(a + b + c == 1){
