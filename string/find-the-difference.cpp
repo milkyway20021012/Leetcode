@@ -1,23 +1,14 @@
 class Solution {
 public:
     char findTheDifference(string s, string t) {
-        if (s == "") {
-            return t[0];
-        }
-        char ret;
-        unordered_map<char, int> ms;
-        unordered_map<char,int> mt;
-        for (auto& e : s) {
-            ms[e]++;
-        }
-        for(auto & e: t){
-            mt[e]++;
-        }
-        for(auto & e : t ){
-            if(mt[e] != ms[e]){
-                ret = e;
+        sort(s.begin(),s.end());
+        sort(t.begin(),t.end());
+        for(int _left = 0;_right = 0;_left < s.size();++_left){
+            if(s[_left] != t[_right]){
+                return t[_right];
             }
+            ++_right;
         }
-        return ret;
+        return t[t.size() - 1];
     }
 };
