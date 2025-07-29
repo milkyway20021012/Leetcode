@@ -5,12 +5,16 @@ public:
             return t[0];
         }
         char ret;
-        unordered_map<char, int> m;
+        unordered_map<char, int> ms;
+        unordered_map<char,int> mt;
         for (auto& e : s) {
-            m[e]++;
+            ms[e]++;
         }
-        for (auto& e : t) {
-            if (m.find(e) == m.end()) {
+        for(auto & e: t){
+            mt[e]++;
+        }
+        for(auto & e : t ){
+            if(mt[e] != ms[e]){
                 ret = e;
             }
         }
