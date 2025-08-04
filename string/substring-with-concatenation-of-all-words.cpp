@@ -14,13 +14,13 @@ public:
                 // 进窗⼝ + 维护 count
                 string in = s.substr(right, len);
                 hash2[in]++;
-                if (hash1.count(in) && hash2[in] <= hash1[in])
+                if (hash2[in] <= hash1[in])
                     count++;
                 // 判断
                 if (right - left + 1 > len * m) {
                     // 出窗⼝ + 维护 count
                     string out = s.substr(left, len);
-                    if (hash1.count(out) && hash2[out] <= hash1[out])
+                    if (hash2[out] <= hash1[out])
                         count--;
                     hash2[out]--;
                     left += len;
