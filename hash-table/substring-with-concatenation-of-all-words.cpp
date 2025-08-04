@@ -14,8 +14,9 @@ public:
             for (int _left = i, _right = i, count = 0; _right + len < s.size();
                  _right += len) {
                 string in = s.substr(_right, len);
+                hash2[in]++;
                 // 进窗口
-                if (++hash2[in] <= hash1[in])
+                if (hash2[in] <= hash1[in])
                     ++count;
                 // 出窗口条件
                 if (_right - _left + 1 > m * len) {
