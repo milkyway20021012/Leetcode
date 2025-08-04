@@ -19,11 +19,11 @@ public:
                 if (hash2[in] <= hash1[in])
                     ++count;
                 // 出窗口条件
-                if (_right - _left + 1 > m * len) {
+                if (_right - _left + 1 > len * m) {
                     string out = s.substr(_left, len);
                     if (hash2[out] <= hash1[out])
                         --count;
-                    --hash2[out];
+                    hash2[out]--;
                     _left += len;
                 }
                 // 更新结果
