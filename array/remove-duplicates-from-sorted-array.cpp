@@ -12,6 +12,6 @@ public:
             nums[++_left] = nums[_right]; 
         }
         cout << _left;
-        return _left == 0 ? 1 : _left;
+        return _left +1;
     }
 };
