@@ -6,6 +6,9 @@ public:
             while(_right < nums.size() && nums[_right] == nums[_left]){
                 ++_right;
             }
+            if(_right == nums.size()){
+                break;
+            }
             nums[++_left] = nums[_right]; 
         }
         cout << _left;
