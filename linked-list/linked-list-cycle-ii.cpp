@@ -18,7 +18,7 @@ public:
             }
             fast = fast->next->next;
             if(slow == fast){
-                ListNode* ptr;
+                ListNode* ptr = head;
                 if(ptr == slow){
                     return ptr;
                 }
