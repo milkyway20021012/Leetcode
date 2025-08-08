@@ -8,24 +8,23 @@
  */
 class Solution {
 public:
-    ListNode* detectCycle(ListNode* head) {
-        unordered_set<ListNode*> st;
-        st.insert(head);
+    ListNode *detectCycle(ListNode *head) {
         ListNode* slow = head;
-        if (slow == nullptr || slow->next == nullptr) {
-            return nullptr;
-        }
-        ListNode* fast = head->next->next;
-        while (fast) {
-            if (st.find(fast) != st.end()) {
-                return fast;
-            }
-            if (st.find(fast->next) != st.end()) {
-                return fast;
-            }
+        ListNode* fast = head;
+        while(fast != nullptr){
             slow = slow->next;
-            st.insert(slow);
+            if(fast->next == nullptr){
+                return nullptr;
+            }
             fast = fast->next->next;
+            if(slow == fast){
+                ListNode* ptr;
+                if(ptr == slow){
+                    return ptr;
+                }
+                ptr = ptr->next;
+                slow = slow->next;
+            }
         }
         return nullptr;
     }
