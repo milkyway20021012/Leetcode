@@ -25,6 +25,7 @@ public:
             }
             slow = slow->next;
             st.insert(slow);
+            fast = fast->next->next;
         }
         return nullptr;
     }
