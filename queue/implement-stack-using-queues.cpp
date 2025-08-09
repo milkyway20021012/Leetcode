@@ -5,63 +5,28 @@ public:
     }
     
     void push(int x) {
-    if(!q1.empty())
         q1.push(x);
-    else
-        q2.push(x);
-    
+        for(int i = 0;i<q1.size()-1;++i){
+            q1.push(q1.front());
+            q1.pop();
+        }
     }
     
     int pop() {
-        int ret = 0;
-        if(q1.empty()){
-            while(q2.size() > 1){
-                q1.push(q2.front());
-                q2.pop();
-            }
-            ret = q2.front();
-            q2.pop();
-        }
-        else{
-            while(q1.size() > 1){
-                q2.push(q1.front());
-                q1.pop();
-            }
-            ret = q1.front();
-            q1.pop();
-        }
-        return ret;
+        int top = q1.front();
+        q1.pop();
+        return top;
     }
     
     int top() {
-        int ret = 0;
-        if(q1.empty()){
-            while(q2.size() > 1){
-                q1.push(q2.front());
-                q2.pop();
-            }
-            ret = q2.front();
-            q2.pop();
-            q1.push(ret);
-        }
-        else{
-            while(q1.size() > 1){
-                q2.push(q1.front());
-                q1.pop();
-            }
-            ret = q1.front();
-            q1.pop();
-            q2.push(ret);
-        }
-        return ret;
+        return q1.top();
     }
     
     bool empty() {
-        return q1.empty() && q2.empty();
+        return q1.empty();
     }
 private:
     queue<int> q1;
-    queue<int> q2;
 };
 
 /**
