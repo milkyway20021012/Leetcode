@@ -19,7 +19,7 @@ public:
     }
     
     int top() {
-        return q1.top();
+        return q1.front();
     }
     
     bool empty() {
