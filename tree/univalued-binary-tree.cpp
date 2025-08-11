@@ -17,14 +17,15 @@ public:
             return false;
         }
         int val = root->val;
-        if(root->left == NULL || root->right == NULL){
-            return true;
-        }
+
         if (root->left != NULL && root->left->val != val) {
             return false;
         }
         if (root->right != NULL && root->right->val != val) {
             return false;
+        }
+        if (root->left == NULL || root->right == NULL) {
+            return true;
         }
         bool leftval = isUnivalTree(root->left);
         bool rightval = isUnivalTree(root->right);
