@@ -17,6 +17,6 @@ public:
     bool Check(TreeNode* p,TreeNode* q){
         if(!p && !q) return true;
         if(!p || !q || p->val != q->val) return false;
-        return Check(p->left,q->right);
+        return Check(p->left,q->right) && Check(p->right,q->left);
     }
 };
