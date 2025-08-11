@@ -13,7 +13,7 @@ class Solution {
 public:
     vector<int> preorderTraversal(TreeNode* root) {
         if(root == NULL){
-            return vector<int>();
+            return PreOrder;
         }
         PreOrder.push_back(root->val);
         preorderTraversal(root->left);
