@@ -15,7 +15,7 @@ public:
         if(!subRoot) return true;
         if(!root) return false;
         if(isSametree(root,subRoot)) return true;
-        return isSametree(root->left,subRoot) || isSametree(root->right,subRoot);
+        return isSubtree(root->left,subRoot) || isSubtree(root->right,subRoot);
     }
     bool isSametree(TreeNode* p,TreeNode* q){
         if(!p && !q){
