@@ -14,6 +14,7 @@ public:
     bool isSubtree(TreeNode* root, TreeNode* subRoot) {
         if(!subRoot) return true;
         if(!root) return false;
+        if(isSametree(root,subRoot)) return true;
         return isSametree(root->left,subRoot) || isSametree(root->right,subRoot);
     }
     bool isSametree(TreeNode* p,TreeNode* q){
