@@ -7,8 +7,6 @@ public:
             int mid = (left + right) / 2;
             if(nums[mid] == target){
                 ret.push_back(mid);
-                ret.push_back(mid + 1);
-                return ret;
             }
             if(nums[mid] < target){
                 left = mid + 1;
@@ -16,6 +14,14 @@ public:
             else{
                 right = mid -1;
             }
+        }
+        if(nums.size() == 1 && !ret.empty()){
+            ret.push_back(ret[0]);
+            return ret;
+        }
+        if(nums.size() != 1 && !ret.empty()){
+            ret.push_back(ret[0] + 1);
+            return ret;
         }
         return {-1,-1};
     }
