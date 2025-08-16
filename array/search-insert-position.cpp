@@ -5,9 +5,10 @@ public:
             return 0;
         }
         int left = 0,right = nums.size() - 1;
-        while(left < right){
-            int mid = (left + right ) / 2;
-            if(nums[mid] == target) return mid;
+        while(left < right){ 
+            int mid = ( left + right ) / 2;
+            cout << mid << endl;
+            if(nums[mid] == target || mid == 0) return mid;
             if(nums[mid] < target){
                 left = mid + 1;
             }
@@ -15,6 +16,7 @@ public:
                 right = mid - 1;
             }
         }
+        cout << right << " " << nums[right];
         if(right == 0 && nums[right] >= target) return 0;
         return left + 1;
     }
