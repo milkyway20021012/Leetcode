@@ -15,7 +15,7 @@ public:
                 right = mid - 1;
             }
         }
-        if(right == 0 && nums[right] > target) return 0;
+        if(right == 0 && nums[right] >= target) return 0;
         return left + 1;
     }
 };
