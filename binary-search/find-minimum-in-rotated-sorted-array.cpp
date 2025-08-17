@@ -12,6 +12,6 @@ public:
                 right = mid;
             }
         }
-        return nums[right];
+        return nums[left];
     }
 };
