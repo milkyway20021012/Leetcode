@@ -5,7 +5,7 @@ public:
         int x = nums[left];
         while(left < right){
             int mid = (left + right) / 2;
-            if(nums[mid] > nums[mid + 1] && nums[mid] > x ){
+            if(nums[mid] > nums[mid + 1] || nums[mid] > x ){
                 left = mid + 1;
             }
             else{
