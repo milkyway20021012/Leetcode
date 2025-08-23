@@ -1,7 +1,7 @@
 class Solution {
 public:
     vector<vector<int>> matrixBlockSum(vector<vector<int>>& mat, int k) {
-        int m = mat.size(),n=mat.size();
+        int m = mat.size(),n=mat[0].size();
         // 預處理
         vector<vector<int>> dp(m+1,vector<int>(n+1));
         for(int i = 1;i<=m;++i){
