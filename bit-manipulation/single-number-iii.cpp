@@ -1,7 +1,7 @@
 class Solution {
 public:
     vector<int> singleNumber(vector<int>& nums) {
-        int XOR = 0;
+        long long XOR = 0;
         for(auto& e : nums){
             XOR ^= e;
         }
