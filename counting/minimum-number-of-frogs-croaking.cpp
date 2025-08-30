@@ -1,39 +1,39 @@
 class Solution {
 public:
+    int c = 0, r = 0, o = 0,a = 0,k = 0;
     int minNumberOfFrogs(string croakOfFrogs) {
-        unordered_map<char, int> hash;
         for (int i = 0; i < croakOfFrogs.size(); ++i) {
             if (croakOfFrogs[i] == 'c') {
-                if (hash.find('k') != hash.end()) {
-                    hash['k']--;
-                    hash[croakOfFrogs[i]]++;
+                if (k != 0) {
+                    --k;
+                    ++c;
                 } else {
-                    hash[croakOfFrogs[i]]++;
+                    ++c;
                 }
             } else if (croakOfFrogs[i] == 'r') {
-                if (hash.find('c') != hash.end()) {
-                    hash['c']--;
-                    hash[croakOfFrogs[i]]++;
+                if (c != 0) {
+                    --c;
+                    ++r;
                 }
             } else if (croakOfFrogs[i] == 'o') {
-                if (hash.find('r') != hash.end()) {
-                    hash['r']--;
-                    hash[croakOfFrogs[i]]++;
+                if (r != 0) {
+                    --r;
+                    ++o;
                 }
             } else if (croakOfFrogs[i] == 'a') {
-                if (hash.find('o') != hash.end()) {
-                    hash['o']--;
-                    hash[croakOfFrogs[i]]++;
+                if (o != 0) {
+                    --o;
+                    ++a;
                 }
             } else {
-                if (hash.find('a') != hash.end()) {
-                    hash['a']--;
-                    hash[croakOfFrogs[i]]++;
+                if (a != 0) {
+                    --a;
+                    ++k;
                 }
             }
         }
-        if(hash['c'] == 0 && hash['r'] == 0 && hash['o'] == 0 && hash['a'] == 0){
-            return hash['k'];
+        if(!(c || r || o || a)){
+            return k;
         }
         return -1;
     }
