@@ -10,25 +10,38 @@ public:
                 } else {
                     ++c;
                 }
+                
             } else if (croakOfFrogs[i] == 'r') {
                 if (c != 0) {
                     --c;
                     ++r;
+                }
+                else{
+                    return -1;
                 }
             } else if (croakOfFrogs[i] == 'o') {
                 if (r != 0) {
                     --r;
                     ++o;
                 }
+                else{
+                    return -1;
+                }
             } else if (croakOfFrogs[i] == 'a') {
                 if (o != 0) {
                     --o;
                     ++a;
                 }
+                else{
+                    return -1;
+                }
             } else {
                 if (a != 0) {
                     --a;
                     ++k;
+                }
+                else{
+                    return -1;
                 }
             }
         }
