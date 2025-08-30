@@ -4,19 +4,15 @@ public:
         if(n == 1){
             return "1";
         }
-        string ret;
-        for(int i = 1; i <=n;++i){
-            if(i == 1){
-                ret = "1";
-                continue;
-            }
+        string ret = "1";
+        for(int i = 2; i <=n;++i){
             string tmp;
             for(int left = 0,right = 0 ; right<ret.size();){
                 char cur = ret[left];
                 while(ret[right] == cur){
                     right++;
                 }
-                char count = (right - left) + '0';
+                string count = to_string(right - left);
                 tmp += count;
                 tmp += cur;
                 left = right;
